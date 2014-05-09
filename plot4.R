@@ -10,11 +10,10 @@ powerdata$datetime<-strptime(paste0(powerdata$Date,powerdata$Time),"%d/%m/%Y%H:%
 reset.par <- par(no.readonly = TRUE)
 
 par(mfrow=c(2,2),
-    mar=c(0.5,0.2,0.5,0.2),
-    pin=c(2.1,1.7),
-    cex=0.8,
-    cex.axis=0.9,
-    cex.lab=0.9)
+    mar=c(0.5,0.1,0.5,0.1),
+    pin=c(2.3,2),
+    cex=0.6,
+    bg="transparent")
 
 plot(powerdata$datetime,powerdata$Global_active_power,
      type='l',xlab='',ylab='Global Active Power')
@@ -29,7 +28,7 @@ lines(powerdata$datetime,powerdata$Sub_metering_2,col='red')
 lines(powerdata$datetime,powerdata$Sub_metering_3,col='blue')
 legend("topright",lty=1,
        col=c("black","red","blue"),
-       bty='n',cex=0.8,
+       bty='n',
        legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
 
 plot(powerdata$datetime,powerdata$Global_reactive_power,

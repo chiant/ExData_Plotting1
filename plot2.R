@@ -7,7 +7,12 @@ powerdata$datetime<-strptime(paste0(powerdata$Date,powerdata$Time),"%d/%m/%Y%H:%
 
 
 #plot2
+reset.par <- par(no.readonly = TRUE)
+
+par(cex=0.7,bg="transparent")
+
 plot(powerdata$datetime,powerdata$Global_active_power,
      type='l',xlab='',ylab='Global Active Power (kilowatts)')
 dev.copy(png,file="plot2.png")
 dev.off()
+par(reset.par)
